@@ -1,6 +1,8 @@
 
-Background
-ncfoodnet.net is a project of Tes Thraves for keeping track of all the great sustainable community agriculture stuff happening in NC.
+http://github.com/unthinkigly.com/Foodnet
+
+Background:
+ncfoodnet.net is a project of Tes Thraves for keeping track of all the great sustainable community agriculture stuff happening in NC, with the support of George Chamales and Chris Blow. 
 
 What we are trying to do:
 Make a wordpress-based contact database that allows an administrator to create new records. Users can search for contacts (across all fields) and see contacts organized into an (large-ish) taxonomy of categories.
@@ -8,15 +10,18 @@ Make a wordpress-based contact database that allows an administrator to create n
 Next Todos: 
 Integrate a big-ass map.
 
-Technical Setup:
-The wordpress setup is using this theme: http://artisanthemes.com/themes/wp-contact-manager/
-
-Which allows you to make a typical wordpress "post" into a "contact."
-
-The backend is using the custom write panel feature of wordpress as described here:
+How it is setup:
+The wordpress setup is using this theme: http://artisanthemes.com/themes/wp-contact-manager/ , which allows you to make a typical wordpress "post" into a "contact." The backend is using the custom write panel feature of wordpress as described here:
 
 http://wefunction.com/2008/10/tutorial-creating-custom-write-panels-in-wordpress/
 
-Included in the theme is a plugins.tgz that contains some optional and required plugins. You need to move these to ROOT/wp-content/plugins. The only one required is the post count plugin. 
+Included in the theme is a plugins.tgz that contains some optional and required plugins. You need to move these to DOCROOT/wp-content/plugins. The only one required is the post count plugin. This theme does not currently support wp 3.x.
 
-Does not support wp 3.x and probably never will. this is a proof of concept. do not try this at home.
+The theme uses the Compass and Sass. 
+
+http://compass-style.org/
+
+
+To make edits to the theme, compile the screen.sass with the command: `compass watch` as per http://compass-style.org/docs/. 
+
+Feedback at http://github.com/unthinkingly.
