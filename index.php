@@ -7,18 +7,8 @@
   <?php $has_person_name = get_post_meta($post->ID, "contact_name_wpcm_value", true); ?>
   <?php $has_email = get_post_meta($post->ID, "email_wpcm_value", true); ?>
 
-<!-- ====================== -->
-<!-- = No posts condition = -->
-<!-- ====================== -->  
-
-  <?php else: ?>
-  <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-  <?php endif; ?>
-
 <!-- end #content -->
 
-<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar1') ) : ?>
-<?php endif; ?>
 
 <!-- ======= -->
 <!-- = map = -->
