@@ -11,41 +11,57 @@
 
 <script src="masonry/js/jquery-1.4.2.min.js"></script>
 <script src="masonry/js/jquery.masonry.js"></script>
-<script>
-    $(function(){
-        $('#content').masonry({
-            columnWidth: 400, 
-            itemSelector: '.children'
-        });
-      });
-  </script>
+
 </head>
 <body>
 
+<!-- ========== -->
+<!-- = topbar = -->
+<!-- ========== -->
 
 <div id="topbar">
+
+  
+  <!-- ======= -->
+  <!-- = nav = -->
+  <!-- ======= -->
+
+  <div id="nav">
+    <p>
+      <a id="home-link" href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?></a>
+      <a id="manage-contacts" href="<?php bloginfo('url') ?>/wp-admin/edit.php">Manage Contacts</a>
+      <a id="add-contact" href="<?php bloginfo('url') ?>/wp-admin/post-new.php?custom-write-panel-id=1">Add New Contact</a>
+      <a id="get-help" href="<?php bloginfo('url') ?>/about">Help</a>
+
+      <a id="logout-link" href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Logout &raquo;</a>
+      <span class="clearer"></span>
+    </p>
+
+  </div>
+
+
+  <!-- ========== -->
+  <!-- = search = -->
+  <!-- ========== -->
+
+  <div id="search"> 
+    <div id="logo">
+      <img src="http://ncfoodnet.com/wp-content/uploads/nc_food_logo.jpg" alt="NC Food NETwork logo">
+    </div>  
+      
+    <h2 class="site-subtitle">Search the NC Sustainable Food System:</h2>
+    <?php include (TEMPLATEPATH . '/searchform.php'); ?>
+    <span>Search by name, org, zip, county, region, role or type</span>
+    <span class="clearer"></span>
+  </div>
+  
 <!-- if you want to hide empty categories change the params to 'hide_empty=0&title_li=' in that wp_list_categories -->
   <ul>    
-    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar1') ) : ?>
-    <?php endif; ?>
   </ul>
   
   <h2 class="widgettitle">Categories</h2>
 	<ul>
 	  <?php wp_list_categories('title_li='); ?>
 	</ul>
-	<?php get_search_form(); ?>
 </div>
 
-<div id="nav">
-  <p>
-    <a id="home-link" href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?></a>
-    <a id="manage-contacts" href="<?php bloginfo('url') ?>/wp-admin/edit.php">Manage Contacts</a>
-    <a id="add-contact" href="<?php bloginfo('url') ?>/wp-admin/post-new.php?custom-write-panel-id=1">Add New Contact</a>
-    <a id="get-help" href="<?php bloginfo('url') ?>/about">Help</a>
-    
-    <a id="logout-link" href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Logout &raquo;</a>
-    <span class="clearer"></span>
-  </p>
-  
-</div>
