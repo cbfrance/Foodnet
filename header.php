@@ -8,6 +8,17 @@
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" /><link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" /><link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 <?php wp_head(); ?>
+
+<script src="masonry/js/jquery-1.4.2.min.js"></script>
+<script src="masonry/js/jquery.masonry.js"></script>
+<script>
+    $(function(){
+        $('#content').masonry({
+            columnWidth: 400, 
+            itemSelector: '.children'
+        });
+      });
+  </script>
 </head>
 <body>
 
