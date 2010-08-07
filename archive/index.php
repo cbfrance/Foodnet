@@ -14,24 +14,6 @@
 	<span class="clearer"></span>
 </div>
 	
-	<h2>Recent Contact Entries<!-- <span><a href="login.php">Register to add your own!</a></span> --></h2>
-	<table>  
-	<?php query_posts('showposts=10'); ?>  
-	<?php $alt = ""; ?>
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<?php if ($alt == "") { $alt = " alt"; } else { $alt = ""; } ?>
-	
-	<tr class="contact<?php echo $alt; ?>">
-	  <td>
-  	  <a href="<?php the_permalink(); ?>"><?php echo get_post_meta($post->ID, "organization_name_wpcm_value", true); ?><span class="viewlocation"></a> <a target="_blank" id="location-link" href="http://maps.google.com/maps?f=q&amp;hl=en&amp;q=<?php echo get_post_meta($post->ID, "address_1_wpcm_value", true); ?>,<?php echo get_post_meta($post->ID, "city_wpcm_value", true); ?>,<?php echo get_post_meta($post->ID, "state_wpcm_value", true); ?>,<?php echo get_post_meta($post->ID, "zip_wpcm_value", true); ?>">(View Location)</a></span>
-    </td>
-  	<td>
-  	  <a href="<?php the_permalink(); ?>"><?php echo get_post_meta($post->ID, "contact_name_wpcm_value", true); ?></a>
-    </td>
-  	<td class="m-category"><?php the_category(' '); ?></td>
-	</tr>
-	<?php endwhile; ?> 
-	</table>
 	
 	<?php else: ?>
 	<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>

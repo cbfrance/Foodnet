@@ -2,8 +2,7 @@
 
 <div id="site">
   <div id="content">
-<span id="content-uppercorner"></span>
-<span id="content-lowercorner"></span>
+
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 	<div class="vitals">

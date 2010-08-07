@@ -62,9 +62,9 @@
 
 <script>
     $(function(){
-        $('#content').masonry({
-            columnWidth: 100, 
-            itemSelector: '.children'
+        $('#topbar').masonry({
+            columnWidth: 170, 
+            itemSelector: '#categorywrap>li.cat-item, #search',
         });
       });
   </script>

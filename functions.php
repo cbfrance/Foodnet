@@ -8,6 +8,9 @@ register_sidebar(array('name'=>'sidebar1',
 'after_title' => '</h2>',
 ));
 
+
+
+
 register_sidebar(array('name'=>'sidebar2',
 'before_widget' => '',
 'after_widget' => '',
@@ -190,7 +193,79 @@ function save_postdata( $post_id )
 			delete_post_meta($post_id, $meta_box['name'].'_wpcm_value', get_post_meta($post_id, $meta_box['name'].'_wpcm_value', true));  
 	}  
 }
-  
+
+
+function list_categories( $args = '' ) {
+	$defaults = array(
+		'show_option_all' => '', 'orderby' => 'name',
+		'order' => 'ASC', 'show_last_update' => 0,
+		'style' => 'list', 'show_count' => 0,
+		'hide_empty' => 1, 'use_desc_for_title' => 1,
+		'child_of' => 0, 'feed' => '', 'feed_type' => '',
+		'feed_image' => '', 'exclude' => '', 'exclude_tree' => '', 'current_category' => 0,
+		'hierarchical' => true, 'title_li' => __( 'Categories' ),
+		'echo' => 1, 'depth' => 0
+	);
+
+	$r = wp_parse_args( $args, $defaults );
+
+	if ( !isset( $r['pad_counts'] ) && $r['show_count'] && $r['hierarchical'] ) {
+		$r['pad_counts'] = true;
+	}
+
+	if ( isset( $r['show_date'] ) ) {
+		$r['include_last_update_time'] = $r['show_date'];
+	}
+
+	if ( true == $r['hierarchical'] ) {
+		$r['exclude_tree'] = $r['exclude'];
+		$r['exclude'] = '';
+	}
+
+	extract( $r );
+
+	$categories = get_categories( $r );
+
+	$output = '';
+	if ( $title_li && 'list' == $style )
+			$output = '<li class="categories">' . $r['title_li'] . '<ul>';
+
+	if ( empty( $categories ) ) {
+		if ( 'list' == $style )
+			$output .= '<li>' . __( "No categories" ) . '</li>';
+		else
+			$output .= __( "No categories" );
+	} else {
+		global $wp_query;
+
+		if( !empty( $show_option_all ) )
+			if ( 'list' == $style )
+				$output .= '<li><a href="' .  get_bloginfo( 'url' )  . '">' . $show_option_all . '</a></li>';
+			else
+				$output .= '<a href="' .  get_bloginfo( 'url' )  . '">' . $show_option_all . '</a>';
+
+		if ( empty( $r['current_category'] ) && is_category() )
+			$r['current_category'] = $wp_query->get_queried_object_id();
+
+		if ( $hierarchical )
+			$depth = $r['depth'];
+		else
+			$depth = -1; // Flat.
+
+		$output .= walk_category_tree( $categories, $depth, $r );
+	}
+
+	if ( $title_li && 'list' == $style )
+		$output .= '</ul></li>';
+
+	$output = apply_filters( 'wp_list_categories', $output );
+
+	if ( $echo )
+		echo $output;
+	else
+		return $output;
+}
+
 add_action('admin_menu', 'create_meta_box');  
 add_action('save_post', 'save_postdata');
 

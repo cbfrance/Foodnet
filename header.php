@@ -9,22 +9,11 @@
 
 <?php wp_head(); ?>
 
-<script src="masonry/js/jquery-1.4.2.min.js"></script>
-<script src="masonry/js/jquery.masonry.js"></script>
+<script src="wp-content/themes/Foodnet/js/jquery-1.4.2.min.js"></script>
+<script src="wp-content/themes/Foodnet/js/jquery.masonry.min.js"></script>
 
 </head>
 <body>
-
-<!-- ========== -->
-<!-- = topbar = -->
-<!-- ========== -->
-
-<div id="topbar">
-
-  
-  <!-- ======= -->
-  <!-- = nav = -->
-  <!-- ======= -->
 
   <div id="nav">
     <p>
@@ -36,32 +25,22 @@
       <a id="logout-link" href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Logout &raquo;</a>
       <span class="clearer"></span>
     </p>
-
   </div>
 
-
-  <!-- ========== -->
-  <!-- = search = -->
-  <!-- ========== -->
-
+<div id="topbar">
   <div id="search"> 
     <div id="logo">
       <img src="http://ncfoodnet.com/wp-content/uploads/nc_food_logo.jpg" alt="NC Food NETwork logo">
     </div>  
-      
     <h2 class="site-subtitle">Search the NC Sustainable Food System:</h2>
     <?php include (TEMPLATEPATH . '/searchform.php'); ?>
     <span>Search by name, org, zip, county, region, role or type</span>
     <span class="clearer"></span>
   </div>
-  
-<!-- if you want to hide empty categories change the params to 'hide_empty=0&title_li=' in that wp_list_categories -->
-  <ul>    
-  </ul>
-  
-  <h2 class="widgettitle">Categories</h2>
-	<ul>
-	  <?php wp_list_categories('title_li='); ?>
+  <ul id="categorywrap">
+
+<!-- http://foodnet.local/wp-admin/categories.php?action=edit&cat_ID=42 -->
+	  <?php wp_list_categories('hide_empty=1&title_li=&exclude=42,103,104'); ?>
 	</ul>
 </div>
 
