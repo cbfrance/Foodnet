@@ -1,0 +1,22 @@
+
+Background
+ncfoodnet.net is a project of Tes Thraves for keeping track of all the great sustainable community agriculture stuff happening in NC.
+
+What we are trying to do:
+Make a wordpress-based contact database that allows an administrator to create new records. Users can search for contacts (across all fields) and see contacts organized into an (large-ish) taxonomy of categories.
+
+Next Todos: 
+Integrate a big-ass map.
+
+Technical Setup:
+The wordpress setup is using this theme: http://artisanthemes.com/themes/wp-contact-manager/
+
+Which allows you to make a typical wordpress "post" into a "contact."
+
+The backend is using the custom write panel feature of wordpress as described here:
+
+http://wefunction.com/2008/10/tutorial-creating-custom-write-panels-in-wordpress/
+
+Included in the theme is a plugins.tgz that contains some optional and required plugins. You need to move these to ROOT/wp-content/plugins. The only one required is the post count plugin. 
+
+Does not support wp 3.x and probably never will. this is a proof of concept. do not try this at home.
