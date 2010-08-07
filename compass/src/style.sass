@@ -1,0 +1,613 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+@import compass/reset
+
+/*  
+ *Theme Name: WP Contact Manager
+ *Theme URI: http://artisanthemes.com/themes/wp-contact-manager/
+ *Description: A free contact manager for WordPress.
+ *Version: 0.5
+ *Author: David Yeiser
+ *Author URI: http://artisanthemes.com/
+
+div.related-contacts
+  display: none
+  /*TEMPORARY HOPE THIS WORKS LATER :)
+
+span.viewlocation a
+  clear: both
+  display: block
+  color: #ccc
+
+*
+  margin: 0
+  padding: 0
+
+body
+  font-family: "Lucida Grande", Arial, sans-serif
+  color: #665
+
+ul
+  list-style: none
+
+p.needhelp
+  color: #6e6655
+  font-size: 12px!important
+  margin: 5px 0
+
+a:link
+  color: #000
+  text-decoration: none
+
+a:visited
+  color: #333
+  border-bottom: none
+  text-decoration: none
+
+a:hover,
+a:focus
+  color: #333
+  text-decoration: none
+
+span.clearer
+  height: 0
+  display: block
+  clear: both
+  font-size: 1px
+  line-height: 1px
+
+div#search
+  float: left
+  width: 600px
+  background: #333
+  border: 3px solid #665
+  -moz-border-radius: 10px
+  -webkit-border-radius: 10px
+  padding: 15px
+
+div#search h2 span a
+  font-size: 10px
+  border: 1px solid red!important
+
+div#search #logo
+  width: 150px
+  height: 100px
+  float: left
+  margin-right: 30px
+
+div#search span
+  display: block
+  font-style: italic
+  font-family: georgia
+  margin: 10px
+
+div#search h2
+  margin-right: 30px
+  margin-top: 3px
+  color: #c3c3c3
+  font-weight: 000
+  font-size: 1.1em
+
+#searchform input
+  width: 17.875em
+  padding: 0.25em 0.125em
+  font-family: Helvetica, Consolas, "Courier New", monospace
+  font-size: 1em
+  color: #554
+  border: 0.063em solid #ddd
+  background-color: #fff
+
+#searchform input#searchsubmit
+  width: 5.75em
+  padding: 0.25em 0.125em
+  font-weight: bold
+  text-transform: uppercase
+  cursor: pointer
+  color: #fff
+  border: 0
+  background-color: #665
+
+/*-------- lists ---------
+
+#sidebar ul
+  font-weight: bold
+  list-style-position: inside!important
+
+#sidebar ul.children
+  list-style-type: none
+  margin-left: 20px
+  font-weight: normal
+
+#sidebar ul li
+  margin-top: 3px
+
+#sidebar
+  font-size: 0.8em
+
+/* ------- LAYOUT -------
+
+#site
+  width: 1200px
+  margin: 1.25em auto
+
+#content
+  width: 650px
+  padding: 1.25em 1.25em 2.5em 1.25em
+  position: relative
+  float: left
+  background-color: #fff
+  overflow: hidden
+  /*border:3px solid #ccc;
+   *-moz-border-radius:10px;
+   *-webkit-border-radius:10px;
+  margin: 1.5em
+
+#sidebar
+  width: 19.25em
+  margin-left: 1.25em
+  padding-top: 2em
+  float: left
+
+#site-meta
+  width: 48.375em
+  margin-top: 1.25em
+  padding-top: 0.75em
+  clear: both
+
+p.catcloud
+
+p.catcloud a
+  color: #666
+
+div.vitals p
+  text-align: center
+
+p.catcloud a:hover
+  color: #333
+  background: green
+  color: #fff
+
+table
+  width: 100%
+  border-right: 1px solid #e5eff8
+  margin: 1em auto
+  border-collapse: collapse
+  font-size: 0.8em
+
+caption
+  color: #9ba9b4
+  font-size: .94em
+  letter-spacing: .1em
+  margin: 1em 0 0 0
+  padding: 0
+  caption-side: top
+  text-align: center
+
+tr.contact
+  border-top: 1px solid #333!important
+
+tr.odd td
+  background: #f7fbff
+
+tr.odd .column1
+  background: #f4f9fe
+
+.column1
+  background: #f9fcfe
+
+td
+  color: #678197
+  border-bottom: 1px solid #c3c3c3
+  border-left: 1px solid #e5eff8
+  padding: .3em 1em
+
+th
+  font-weight: normal
+  color: #678197
+  text-align: left
+  border-bottom: 1px solid #e5eff8
+  border-left: 1px solid #e5eff8
+  padding: .3em 1em
+
+thead th
+  background: #f3f3f3
+  font: "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif
+  color: green
+
+table td.m-category a
+  padding: 0 5px
+  margin: 0px 5px
+  display: block
+  text-transform: uppercase
+  font-size: 0.75em
+  text-decoration: none
+
+table td.m-category a:hover
+  color: green
+
+/* ------- ADMIN BAR -------
+
+#admin-bar
+  width: 100%
+  padding: 0.5em 0
+  border-bottom: 2px solid #887
+  background-color: #776
+
+#admin-bar p
+  width: 48.375em
+  margin: 0 auto
+  padding-top: 3px
+
+#admin-bar p a
+  padding: 1px 0.5em
+  display: block
+  float: left
+  font-size: 1.3em
+  font-weight: bold
+  text-decoration: none
+  color: #fdfeef
+  border-right: 1px solid #887
+
+#admin-bar p a:hover
+  text-decoration: underline
+
+#admin-bar p a#home-link
+  padding: 1px 0.5em 1px 20px
+  background: url("") 0 0 no-repeat
+
+#admin-bar p a#get-help
+  border-right: 0
+
+#admin-bar p a#logout-link
+  float: right
+  border-right: 0
+
+/* ------- MULTIPLE CONTACTS -------
+
+h2
+  padding-bottom: 0.625em
+  font-family: Georgia,    "Times New Roman", serif
+  font-size: 1.425em
+  font-weight: normal
+  color: #00872f
+  margin-top: 20px
+
+h2 span.archived-feature
+  background: #c3c3c3
+  color: #000
+  padding: 2px 10px
+
+/* ------- SINGLE CONTACT -------
+
+h3.site-subtitle
+  font-family: Verdana, Arial, sans-serif
+  line-height: 20px
+  text-transform: uppercase
+
+.vitals
+  font-family: Verdana, Arial, sans-serif
+
+img.contact-picture
+  margin: 0 1em 1em 0
+  float: left
+
+.vitals p
+  width: 19.75em
+  padding-bottom: 0.5em
+  float: left
+  border-bottom: 0.063em solid #ddd
+
+span.organization
+  padding-bottom: 0
+  display: block
+  font-size: 1.1em
+  font-weight: bold
+  line-height: 1.5em
+  color: #00872f
+
+span.name
+  margin-bottom: 0.5em
+  padding-bottom: 0.5em
+  display: block
+  font-family: Georgia, "Times New Roman", serif
+  font-size: 0.75em
+  line-height: 1.25em
+  color: #665
+  border-bottom: 0.063em solid #ddd
+
+span.title
+  padding-bottom: 0.375em
+  display: block
+  font-size: 0.813em
+  font-style: italic
+  color: #776
+
+span.email, span.website
+  display: block
+  font-size: 0.688em
+  font-weight: bold
+  line-height: 16px
+
+span.website a, span.email a
+  text-decoration: none
+
+.phone
+  padding: 1.25em 0
+  clear: both
+  font-family: "Lucida Grande", Arial, Verdana, sans-serif
+
+.phone h3.site-subtitle
+  width: 100px
+  margin-right: 1.538em
+  float: left
+  text-align: right
+
+ul.phone-numbers
+  width: 15em
+  float: left
+  list-style: none
+
+ul.phone-numbers li
+  margin-bottom: 1px
+  padding: 0.125em 0.375em
+  font-size: 0.813em
+  line-height: 20px
+  border-top: 1px solid #ddd
+
+ul.phone-numbers li:first-child
+  background-color: #eee
+
+ul.phone-numbers li span.number
+  font-weight: bold
+  letter-spacing: 1px
+
+.additional-info
+  padding: 1.25em 0
+  clear: both
+
+.address
+  margin-right: 1.625em
+  float: left
+
+.optional-fields
+  width: 15.375em
+  float: right
+  font-size: 0.813em
+  line-height: 20px
+
+/* The width is static on this element due to alignment with the contact image
+.address h3.site-subtitle
+  width: 100px
+  margin-right: 1.538em
+  float: left
+  text-align: right
+
+.address p
+  width: 17.75em
+  float: left
+  font-size: 0.813em
+  line-height: 20px
+
+.extra
+  width: 27em
+  margin-top: 1.25em
+  padding-top: 0.75em
+  float: left
+  clear: both
+  border-top: 0.188em double #ddd
+
+#map
+  height: 250px
+
+.notes
+  width: 27em
+  margin-bottom: 1em
+  position: relative
+  float: left
+
+.notes p
+  padding: 0.188em 0 0.75em 0
+  font-size: 0.813em
+  line-height: 1.25em
+
+.related-contacts
+  width: 10em
+  margin: 0 0 1em 1.625em
+  position: relative
+  float: right
+
+.related-contacts h3
+  font-family: Verdana, Arial, sans-serif
+  font-size: 0.688em
+  line-height: 20px
+  text-transform: uppercase
+
+.related-contacts ul
+  padding-top: 3px
+
+.related-contacts li
+  font-family: Georgia, "Times New Roman", serif
+  font-size: 12px
+  line-height: 17px
+
+.related-contacts li a
+  text-decoration: none
+
+.contact-tags
+  margin: 1em 0 1.25em 0
+  padding-top: 0.125em
+  clear: both
+  border-top: 0.063em solid #ddd
+
+.contact-tags span
+  font-family: Verdana, Helvetica, Arial, sans-serif
+  font-size: 0.688em
+  font-weight: bold
+
+.contact-tags a
+  font-size: 0.688em
+  font-weight: bold
+  text-decoration: none
+
+/* ------- SIDEBAR -------
+
+#sidebar p
+  padding-bottom: 1.25em
+  font-size: 0.688em
+  line-height: 1em
+
+#sidebar h3
+  margin-bottom: 0.5em
+  font-size: 0.688em
+  text-transform: uppercase
+  border-bottom: 0.125em solid #ccc
+
+#sidebar p a
+  text-decoration: none
+
+#sidebar form
+  padding: 0 0 1.25em 0
+
+#ind-contact-meta
+  margin: 1em 0 0.5em 0
+
+#ind-contact-meta p a
+  padding: 10px 5px 7px 20px
+  display: block
+  font-size: 1.25em
+  font-weight: bold
+
+#ind-contact-meta p a[title="Edit post"]
+  border-top: 1px solid #ddd
+  background: url("images/icon-user-edit.png") 0 7px no-repeat
+
+#ind-contact-meta p a#location-link
+  padding-bottom: 7px
+  background: url("images/icon-map.png") 0 7px no-repeat
+
+#ind-contact-meta p a[title="Edit post"]:hover, #ind-contact-meta p a#location-link:hover
+  background-position: 0 -43px
+
+/* ------- COMMENTS / USER NOTES -------
+
+div#user-notes
+  margin-top: 1em
+  padding: 1em
+  border: 3px solid #dfdfdf
+  background-color: #fff
+
+#sidebar h3#user-notes-title, #sidebar h3#leave-user-note
+  font-family: Georgia, "Times New Roman", serif
+  font-size: 18px
+  font-weight: normal
+  text-transform: none
+  color: #999
+  border-bottom: 0
+
+#sidebar h3#leave-user-note
+  padding-top: 1.25em
+
+dl.commentlist
+
+dl.commentlist dt
+  margin-top: 1em
+  display: block
+  font-family: Georgia, "Times New Roman", serif
+  border-top: 0.063em solid #ddd
+
+dl.commentlist dt cite
+  font-size: 1em
+
+dl.commentlist dt cite a
+  text-decoration: none
+  color: #004d86
+
+dl.commentlist dt span#author-meta
+  padding-top: 5px
+  position: relative
+  display: block
+
+dl.commentlist dt span.comment-meta a
+  font-family: Helvetica, Arial, sans-serif
+  font-size: 0.688em
+  text-decoration: none
+  color: #999
+
+dl.commentlist dt img
+  margin: 0 0.75em 0 0
+  position: relative
+  float: left
+  border: 3px solid #ddd
+  border-top: 2px solid #ddd
+
+dl.commentlist dd
+  margin-top: 1em
+  display: block
+  clear: both
+  font-family: Georgia, "Times New Roman", serif
+  border-bottom: 0.125em solid #ddd
+
+#sidebar dl.commentlist dd p
+  padding-bottom: 1em
+  display: block
+  font-size: 0.75em
+  line-height: 1.5em
+
+#sidebar p.login-note
+  font-size: 0.813em
+  font-weight: bold
+  line-height: 1em
+  background-color: #fdfeef
+
+form#commentform p
+  font-size: 0.813em
+  font-family: Georgia, "Times New Roman", serif
+  font-style: italic
+  line-height: 1em
+  background-color: #fff
+
+form#commentform p a
+  text-decoration: underline
+
+form#commentform
+
+form#commentform input, form#commentform textarea
+  padding: 2px
+  font-size: 13px
+  color: #665
+  border: 1px solid #ddd
+  border-bottom: 3px solid #dcdcdc
+
+form#commentform input#submit
+  padding: 3px 5px
+  font-size: 15px
+  font-weight: bold
+  font-style: italic
+  cursor: pointer
+  color: #443
+  border: 3px double #c0c0c0
+  background-color: #ddd
+
+/* ------- SITE META -------
+
+#site-meta p
+  padding: 0.625em
+  font-size: 0.688em
+  text-align: center
+  color: #999
+
+#site-meta p a
+  color: #999
+
+#site-meta p a.home-link
+  font-weight: bold
+  color: #554
+
+#site-meta a.home-link:hover, #site-meta a.home-link:active
+  color: #004d86
+
+#site-meta a:hover, #site-meta a:active
+  color: #004d86

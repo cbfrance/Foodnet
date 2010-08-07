@@ -14,7 +14,7 @@
 	<span>Search for any name, organization name, zip code, county, region, role or type of work</span>
 	<span class="clearer"></span>
 </div>
-	
+
 	<h2>Recent Contact Entries<!-- <span><a href="login.php">Register to add your own!</a></span> --></h2>
 	<table>  
 	<?php query_posts('showposts=10'); ?>  
