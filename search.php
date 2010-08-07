@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <div id="site">
 <div id="content">
+  
 		<h2 class="pagetitle">Search Results</h2>
   	<table>  
     	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

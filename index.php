@@ -1,14 +1,12 @@
+<?php get_header(); ?>
 <div id="site">
 <div id="content">
 
-  <?php get_header(); ?>
+  
 
   <?php $has_organization = get_post_meta($post->ID, "organization_name_wpcm_value", true); ?>
   <?php $has_person_name = get_post_meta($post->ID, "contact_name_wpcm_value", true); ?>
   <?php $has_email = get_post_meta($post->ID, "email_wpcm_value", true); ?>
-
-<!-- end #content -->
-
 
 <!-- ======= -->
 <!-- = map = -->
@@ -21,14 +19,5 @@
 <!-- =========== -->
 <!-- = masonry = -->
 <!-- =========== -->
-
-<script>
-    $(function(){
-        $('#topbar').masonry({
-            columnWidth: 170, 
-            itemSelector: '#categorywrap>li.cat-item, #search',
-        });
-      });
-  </script>
 
 <?php get_footer(); ?>

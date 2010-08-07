@@ -4,6 +4,19 @@
 	</div>
 </div>
 
+<script>
+    $(function(){
+        $('#topbar').masonry({
+            columnWidth: 170, 
+            itemSelector: '#categorywrap>li.cat-item, #search',
+        });
+      });
+  </script>
+
+
+
+
+
 <?php wp_footer(); ?>
 </body>
 </html>

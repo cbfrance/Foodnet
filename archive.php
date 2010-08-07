@@ -1,11 +1,6 @@
 <?php get_header(); ?>
-
 <div id="site">
-
 <div id="content">
-
-<span id="content-uppercorner"></span>
-<span id="content-lowercorner"></span>
 
 	<?php if (is_tag()) { ?>
 		<h2>Contacts Tagged with <span class="archived-feature"><?php single_tag_title(); ?></span></h2>

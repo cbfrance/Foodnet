@@ -5,8 +5,10 @@ Template Name: everyone
 ?>
 
 <?php get_header(); ?>
+
 <div id="site">
 <div id="content">
+
 
 <?php $has_organization = get_post_meta($post->ID, "organization_name_wpcm_value", true); ?>
 <?php $has_person_name = get_post_meta($post->ID, "contact_name_wpcm_value", true); ?>
