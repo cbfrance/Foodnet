@@ -9,8 +9,8 @@
 
 <?php wp_head(); ?>
 
-<script src="wp-content/themes/Foodnet/js/jquery-1.4.2.min.js"></script>
-<script src="wp-content/themes/Foodnet/js/jquery.masonry.min.js"></script>
+<script src="/wp-content/themes/Foodnet/js/jquery-1.4.2.min.js"></script>
+<script src="/wp-content/themes/Foodnet/js/jquery.masonry.min.js"></script>
 
 </head>
 <body>
