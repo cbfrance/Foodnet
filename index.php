@@ -10,7 +10,14 @@
 <!-- = google style  = -->
 <!-- ================= -->
 
+<!-- <iframe id="mapframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?&amp;t=k&amp;f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=http:%2F%2Froguegenius.com%2Furbanfarming%2Fpython%2Fdirme.2010-07-19.0539.kml&amp;sll=37.0625,-95.677068&amp;sspn=40.460237,79.013672&amp;ie=UTF8&amp;ll=35.869021,-79.917297&amp;spn=1.297561,3.515625&amp;output=embed"></iframe> 
+</div> -->
 
+
+
+<!-- ============ -->
+<!-- = polymaps = -->
+<!-- ============ -->
 
 <!-- <style type="text/css" media="screen">
   #map {
@@ -40,7 +47,9 @@
       
 </script> -->
 
-<!-- 12708 is a nice map-->
+
+<!-- load the kml, something like this:  -->
+<!-- var geoxml = new CM.GeoXml('eqs7day-M2.5.xml', {local:true} ); -->
 
 
 
@@ -51,7 +60,12 @@
    var cloudmade = new CM.Tiles.CloudMade.Web({key: '12aa5b315c7d4067941bf66d78669dcf', styleId:33922});
    var map = new CM.Map('cm-example', cloudmade);
    map.setCenter(new CM.LatLng( 35.923, -79.7442), 7);
+   var geoxml = new CM.GeoXml('/wp-content/themes/Foodnet/foodnet.kml', {local:true} );
    
+   CM.Event.addListener(geoxml, 'load', function() {
+       map.addOverlay(geoxml);
+     });
+     
  </script>
  
 </div>
