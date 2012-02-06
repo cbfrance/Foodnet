@@ -1,5 +1,6 @@
 @import compass/reset
 @import compass/utilities
+@import compass/css3
 
 /*  
  *Theme Name: WP Contact Manager
@@ -9,22 +10,31 @@
  *Author: David Yeiser
  *Author URI: http://artisanthemes.com/
 
-$darkest= #273D2B
-
+$darkest: #273D2B
+$darkgreen: #C5C9A9
+$brown: #78735B
+$lightgreen: lighten($darkgreen, 10%)
+$default_padding: 10px
 
 div#nav
   background: $darkest
+  padding: 10px
   a
-    color: #78735B
-    font-size: 22px
+    color: $darkgreen
+    font-size: 1.1em
     line-height: 30px
-    margin-left: 1em
+    margin-left: $default_padding
     font-weight: normal
     text-transform: uppercase
     text-decoration: none
-    &:hover
-      color: #C5C9A9
+    @include border-radius(30px)
+    padding: 5px 10px
+    background: lighten($darkest, 4%)
     
+    &:hover
+      color: lighten($darkgreen, 10%)
+    &:active
+      color: darken($darkgreen, 30%)  
 
 div.related-contacts
   display: none
@@ -168,7 +178,7 @@ table td.m-category a:hover
 /* ------- MULTIPLE CONTACTS -------
 
 h2
-  font-family: Georgia,    "Times New Roman", serif
+  font-family: Georgia, "Times New Roman", serif
   font-size: 1.425em
   font-weight: normal
   color: #00872f
@@ -187,109 +197,108 @@ h2 span.archived-feature
 /* ------- SINGLE CONTACT -------
 
 h3.site-subtitle
-  font-family: Verdana, Arial, sans-serif
+  font-family: palatino, georgia, "Lucida Grande", Arial, sans-serif
   line-height: 20px
-  text-transform: uppercase
-  margin-left: 50px
   float: left
+  font-style: italic
 
 .vitals
-  font-family: Verdana, Arial, sans-serif
-
-img.contact-picture
-  margin: 0 1em 1em 0
-  float: left
-
-.vitals p
-  width: 19.75em
-  padding-bottom: 0.5em
-  float: left
-  border-bottom: 0.063em solid #ddd
-
-span.organization
-  padding-bottom: 0
-  display: block
-  font-size: 1.1em
-  font-weight: bold
-  line-height: 1.5em
-  color: #00872f
-
-span.name
-  margin-bottom: 0.5em
-  padding-bottom: 0.5em
-  display: block
-  font-family: Georgia, "Times New Roman", serif
-  font-size: 0.75em
-  line-height: 1.25em
-  color: #665
-  border-bottom: 0.063em solid #ddd
-
-span.title
-  padding-bottom: 0.375em
-  display: block
-  font-size: 0.813em
-  font-style: italic
-  color: #776
-
-span.email, span.website
-  display: block
-  font-size: 0.688em
-  font-weight: bold
-  line-height: 16px
-
-span.website a, span.email a
-  text-decoration: none
-
-.phone
-  padding: 1.25em 0
-  clear: both
-  font-family: "Lucida Grande", Arial, Verdana, sans-serif
-
-.phone h3.site-subtitle
-  width: 100px
-  margin-right: 1.538em
+  font-family: "Lucida Grande", Arial, sans-serif
   float: left
   text-align: right
+  font-size: 1.3em
+  border-bottom: 4px double #c3c3c3
+  margin-bottom: 20px
+  padding-bottom: 20px
+  img 
+    float: left
+  p 
+    width: 450px
 
-ul.phone-numbers
-  width: 15em
+  img.contact-picture
+    margin: 0 1em 1em 0
+    float: left
+
+  span.organization
+    padding-bottom: 0
+    display: block
+    font-size: 1.1em
+    font-weight: bold
+    line-height: 1.5em
+    color: #00872f
+
+  span.name
+    margin-bottom: 0.5em
+    padding-bottom: 0.5em
+    display: block
+    font-family: Georgia, "Times New Roman", serif
+    font-size: 0.75em
+    line-height: 1.25em
+    color: #665
+
+  span.title
+    padding-bottom: 0.375em
+    display: block
+    font-size: 0.813em
+    font-style: italic
+    color: #776
+
+  span.email, span.website
+    display: block
+    font-size: 0.688em
+    font-weight: bold
+    line-height: 16px
+
+  span.website a, span.email a
+    text-decoration: none
+
+.phone
+  clear: both
+  font-family: "Lucida Grande", Arial, Verdana, sans-serif
   float: left
-  list-style: none
+  padding: 10px 0
+  
+  ul.phone-numbers
+    width: 190px
+    float: left
+    list-style: none
+    clear: both
+    padding: 0
+    margin: 0
+    li
+      margin-bottom: 1px
+      padding: 0.125em 0.375em
+      font-size: 0.813em
+      line-height: 20px
+      border-top: 1px solid #ddd
+    li:first-child
+      background-color: #eee
 
-ul.phone-numbers li
-  margin-bottom: 1px
-  padding: 0.125em 0.375em
-  font-size: 0.813em
-  line-height: 20px
-  border-top: 1px solid #ddd
+    li span.number
+      font-weight: bold
+      letter-spacing: 1px
 
-ul.phone-numbers li:first-child
-  background-color: #eee
 
-ul.phone-numbers li span.number
-  font-weight: bold
-  letter-spacing: 1px
 
 .additional-info
-  padding: 1.25em 0
-  clear: both
-
-.address
-  margin-right: 1.625em
+  padding: 10px 0
   float: left
+  display: inline-block
+  margin-left: 20px
+  .address
+    margin-right: 1.625em
+    float: left
+    clear: both
+    p
+      float: left
+      clear: both
+      padding: 0
 
 .optional-fields
   width: 15.375em
   float: right
   font-size: 0.813em
   line-height: 20px
-
-/* The width is static on this element due to alignment with the contact image
-.address h3.site-subtitle
-  width: 100px
-  margin-right: 1.538em
-  float: left
-  text-align: right
 
 .address p
   width: 17.75em
@@ -313,11 +322,12 @@ ul.phone-numbers li span.number
   margin-bottom: 1em
   position: relative
   float: left
-
-.notes p
-  padding: 0.188em 0 0.75em 0
-  font-size: 0.813em
-  line-height: 1.25em
+  h3 
+    padding: 15px 15px 10px 0
+  p
+    padding: 0.188em 0 0.75em 0
+    font-size: 0.813em
+    line-height: 1.25em
 
 .related-contacts
   width: 10em
@@ -326,7 +336,7 @@ ul.phone-numbers li span.number
   float: right
 
 .related-contacts h3
-  font-family: Verdana, Arial, sans-serif
+  font-family: "Lucida Grande", Verdana, Arial, sans-serif
   font-size: 0.688em
   line-height: 20px
   text-transform: uppercase
@@ -349,7 +359,7 @@ ul.phone-numbers li span.number
   border-top: 0.063em solid #ddd
 
 .contact-tags span
-  font-family: Verdana, Helvetica, Arial, sans-serif
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif
   font-size: 0.688em
   font-weight: bold
 
@@ -382,9 +392,28 @@ ul.phone-numbers li span.number
 
 div#user-notes
   margin-top: 1em
-  padding: 1em
-  border: 3px solid #dfdfdf
-  background-color: #fff
+  padding: 1em 0
+  input#submit 
+    margin: 10px 0
+  form#commentform
+    textarea
+      width: 100%
+      margin: 0 auto
+
+a#location-link, a.post-edit-link
+  background: green
+  color: #fff
+  padding: 5px 10px
+  @include border-radius(15px)
+  text-decoration: none
+  font-size: 13px
+  &:hover
+    color: #f8f8f8
+  &:active
+    color: #c3c3c3
+
+#sidebar
+  margin-top: 10px  
 
 #sidebar h3#user-notes-title, #sidebar h3#leave-user-note
   font-family: Georgia, "Times New Roman", serif
@@ -455,6 +484,7 @@ form#commentform p
   font-style: italic
   line-height: 1em
   background-color: #fff
+  padding: 5px 0 
 
 form#commentform p a
   text-decoration: underline
@@ -499,7 +529,7 @@ form#commentform input#submit
 #site-meta a:hover, #site-meta a:active
   color: #004d86
 
-$search-width = 300px
+$search-width: 300px
 
 div#topbar
   float: left
@@ -513,13 +543,16 @@ div#topbar
     font-size: 0.8em
     width: 100%
     li.cat-item
-      width: 170px
+      width: 160px
       display: block
       float: left
       margin-top: 10px
+      margin-right: 10px
       a
         text-decoration: none
         color: #C7C7C7
+        &:hover
+          color: #fff
         
     ul.children
       float: left
@@ -534,34 +567,36 @@ div#topbar
 div#search
   float: left
   width: $search-width
-  padding: 15px
+  padding: 15px 10px 0 0
   div#logo
     float: left
     clear: none
   h2.site-subtitle
     font-size: 10px
-    margin-right: 30px
     color: #c3c3c3
     font-weight: 000
-    font-size: 1.1em
-    width: 39%
+    font-size: 1.3em
+    line-height: 1.2em
+    width: 45%
     float: right
     clear: none
   span
     display: block
     font-style: italic
     font-family: georgia
-    margin: 10px 0
+    margin: 10px
     float: right
   input#s
-    width: 80%
+    width: 70%
     float: left
+    font-size: 20px
+    margin-left: 10px
   input#searchsubmit
     width: 50px
     border: 3px double #333
     float: right
     clear: none
-    margin: 0
+    margin: 0 15px 0 0
 
 #searchform input
   width: 17.875em
@@ -588,5 +623,17 @@ div#search
 
 #content
   width: 100%
-  p, ul 
-    padding: 0 1em
+
+
+#content table 
+  margin: 10px auto
+  width: 90%
+  
+#content .entry
+  margin: 30px 0 0 30px
+  @include clearfix()
+  float: left
+  clear: both
+  border: 1px solid #c3c3c3
+  padding: 20px
+  
