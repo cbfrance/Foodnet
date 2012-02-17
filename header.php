@@ -8,6 +8,10 @@
 
 <?php wp_head(); ?>
 
+<script src='wp-content/themes/Foodnet/js/wax/ext/modestmaps.min.js' type='text/javascript'></script>
+<script src='wp-content/themes/Foodnet/js/wax/dist/wax.mm.js' type='text/javascript'></script>
+<link href='wp-content/themes/Foodnet/js/wax/theme/controls.css' rel='stylesheet' type='text/css' />
+
 </head>
 <body>
 
