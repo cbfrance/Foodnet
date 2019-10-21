@@ -22,7 +22,7 @@
     }],
     "devDependencies": {
       "jshint": "0.2.3",
-      "uglify-js": "1.0.x",
+      "uglify-js": "3.6.x",
       "docco": "0.3.x",
       "banner": "0.0.x"
     }
